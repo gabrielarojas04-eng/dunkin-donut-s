@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naturaleza y Tamaño de la Empresa | Dunkin'</title>
+  <style>
+    :root {
+      --orange: #f58220;
+      --pink: #e11383;
+      --purple: #4b156d;
+      --dark: #1f1f29;
+      --light: #fff7fb;
+      --white: #ffffff;
+      --gray: #f3f3f6;
+      --text: #2d2d34;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--purple), var(--pink), var(--orange));
+      color: var(--white);
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.7rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.15rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--white);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      font-size: 0.95rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 35px;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      color: var(--purple);
+      margin-bottom: 20px;
+      font-size: 2rem;
+      border-left: 8px solid var(--orange);
+      padding-left: 15px;
+    }
+
+    h3 {
+      color: var(--pink);
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+    }
+
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--gray);
+      border-radius: 16px;
+      padding: 22px;
+      border-top: 6px solid var(--pink);
+    }
+
+    .card strong {
+      color: var(--purple);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, rgba(245,130,32,0.15), rgba(225,19,131,0.12));
+      border-left: 6px solid var(--orange);
+      padding: 18px;
+      border-radius: 14px;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th {
+      background: var(--purple);
+      color: white;
+      padding: 14px;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .interactive {
+      background: #fff2f8;
+      border: 2px dashed var(--pink);
+      padding: 25px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin: 20px 0;
+      accent-color: var(--pink);
+    }
+
+    .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--purple);
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid var(--orange);
+    }
+
+    .bar-container {
+      margin-top: 20px;
+      background: #e6e6ec;
+      border-radius: 30px;
+      overflow: hidden;
+      height: 32px;
+    }
+
+    .bar {
+      height: 32px;
+      width: 50%;
+      background: linear-gradient(90deg, var(--orange), var(--pink));
+      transition: width 0.3s ease;
+    }
+
+    .conclusion {
+      background: var(--purple);
+      color: white;
+    }
+
+    .conclusion h2 {
+      color: white;
+      border-left-color: var(--orange);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: white;
+      background: var(--dark);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        margin: 20px 12px;
+        padding: 25px;
+      }
+      nav a {
+        display: inline-block;
+        margin: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Naturaleza y Tamaño de la Empresa</h1>
+    <p><strong>Caso aplicado: Dunkin’ Donuts</strong><br> Análisis de la empresa como sustituto del mercado, integración vertical, costos de transacción, gobernanza y punto óptimo de tamaño empresarial.</p>
+  </header>
+
+  <nav>
+    <a href="#introduccion">Inicio</a>
+    <a href="#teoria">Teoría</a>
+    <a href="#caso">Caso Dunkin'</a>
+    <a href="#integracion">Integración</a>
+    <a href="#interactivo">Interactivo</a>
+    <a href="#conclusion">Conclusión</a>
+  </nav>
+
+  <section id="introduccion">
+    <h2>1. Introducción</h2>
+    <p>El presente trabajo analiza la naturaleza y tamaño de la empresa tomando como caso real a <strong>Dunkin’ Donuts</strong>, una compañía internacional del rubro de comida rápida, café y productos de panadería. El análisis se basa en los conceptos de Organización Industrial, especialmente en la idea de que la empresa existe porque, en muchas situaciones, coordinar actividades internamente puede ser más eficiente que realizarlas completamente a través del mercado.</p>
+    <p>Dunkin’ resulta un caso interesante porque combina elementos de mercado, contratos, franquicias y control corporativo. No es una empresa totalmente integrada verticalmente, pero tampoco deja todas sus decisiones al libre funcionamiento del mercado. Su modelo se basa en un equilibrio entre control y flexibilidad.</p>
+
+    <div class="hero-card">
+      <div class="card"><strong>Empresa analizada</strong>Dunkin’ Donuts</div>
+      <div class="card"><strong>Industria</strong>Comida rápida, café y productos de conveniencia</div>
+      <div class="card"><strong>Modelo central</strong>Franquicias con control corporativo</div>
+      <div class="card"><strong>Concepto clave</strong>Equilibrio entre costos de transacción y costos de coordinación</div>
+    </div>
+  </section>
+
+  <section id="teoria">
+    <h2>2. Dimensión Teórica</h2>
+
+    <h3>2.1 La empresa como sustituto del mercado</h3>
+    <p>Desde la Organización Industrial, la empresa puede entenderse como una institución que reemplaza al mercado cuando realizar transacciones externas resulta costoso o riesgoso. En vez de comprar, negociar y supervisar cada actividad por separado, la empresa coordina internamente ciertos procesos para reducir incertidumbre, asegurar calidad y mejorar eficiencia.</p>
+    <p>Esto significa que la empresa no existe solo para producir, sino también para organizar. Su función es decidir qué actividades conviene realizar internamente, cuáles conviene contratar externamente y cuáles deben controlarse mediante contratos.</p>
+
+    <div class="highlight">
+      <strong>Idea central:</strong> La empresa aparece cuando usar el mercado tiene costos relevantes, como buscar proveedores, negociar contratos, controlar calidad o enfrentar comportamientos oportunistas.
+    </div>
+
+    <h3>2.2 Costos de transacción</h3>
+    <p>Los costos de transacción son aquellos costos asociados a usar el mercado. No se refieren solamente al precio del producto, sino a todo lo que implica coordinar una relación económica con terceros.</p>
+    <ul>
+      <li>Costos de búsqueda de proveedores.</li>
+      <li>Costos de negociación de contratos.</li>
+      <li>Costos de supervisión y cumplimiento.</li>
+      <li>Riesgo de incumplimiento o mala calidad.</li>
+      <li>Costos derivados de información incompleta.</li>
+    </ul>
+    <p>Cuando estos costos son altos, la empresa puede preferir integrar la actividad internamente. Pero si la integración genera demasiada burocracia, puede ser mejor contratar o franquiciar.</p>
+
+    <h3>2.3 Integración vertical</h3>
+    <p>La integración vertical ocurre cuando una empresa controla más de una etapa de la cadena de valor. Por ejemplo, producción, distribución, venta al consumidor y servicio postventa. Una empresa puede integrarse hacia atrás, controlando proveedores, o hacia adelante, controlando distribución y venta.</p>
+    <p>La decisión de integrarse depende de una comparación: si el mercado es caro o riesgoso, conviene integrar; si coordinar internamente es demasiado costoso, conviene externalizar.</p>
+
+    <h3>2.4 Tamaño óptimo de la empresa</h3>
+    <p>El tamaño de una empresa no debe medirse solo por cantidad de locales o ventas. Desde esta teoría, el tamaño óptimo se alcanza cuando la empresa controla internamente solo aquello que le genera eficiencia y deja al mercado o a contratos aquello que otros pueden hacer mejor.</p>
+    <p>Si una empresa crece demasiado, aumentan los costos de coordinación: burocracia, lentitud, supervisión, conflictos internos y pérdida de flexibilidad. Si externaliza demasiado, aumentan los costos de transacción: menor control, dependencia de terceros y riesgo de calidad.</p>
+
+    <h3>2.5 Problema de agencia</h3>
+    <p>El problema de agencia aparece cuando una persona o entidad, llamada agente, toma decisiones en nombre de otra, llamada principal. El conflicto surge porque ambos pueden tener objetivos distintos.</p>
+    <p>En empresas con franquicias, este problema es muy importante: el dueño de la marca quiere proteger la reputación global, mientras que el franquiciado puede estar más preocupado por su rentabilidad local de corto plazo.</p>
+  </section>
+
+  <section id="caso">
+    <h2>3. Aplicación Práctica: Dunkin’ Donuts</h2>
+
+    <h3>3.1 Descripción de la empresa</h3>
+    <p>Dunkin’ Donuts es una empresa reconocida internacionalmente por la venta de café, donuts, bebidas frías, sándwiches y productos de consumo rápido. Su propuesta de valor se basa en entregar productos estandarizados, accesibles y de consumo frecuente, combinando rapidez, conveniencia y reconocimiento de marca.</p>
+    <p>La empresa compite en una industria dinámica, donde los consumidores valoran precio, rapidez, sabor, ubicación, promociones, experiencia de compra y consistencia del producto.</p>
+
+    <h3>3.2 Industria en la que participa</h3>
+    <p>Dunkin’ participa principalmente en la industria de comida rápida y cafeterías. Sus competidores pueden variar según el país, pero generalmente incluyen cadenas como Starbucks, McDonald’s, Juan Valdez, cafeterías locales, tiendas de conveniencia y panaderías.</p>
+
+    <table>
+      <tr>
+        <th>Aspecto</th>
+        <th>Aplicación en Dunkin’</th>
+      </tr>
+      <tr>
+        <td>Producto principal</td>
+        <td>Café, donuts, bebidas y alimentos de consumo rápido</td>
+      </tr>
+      <tr>
+        <td>Tipo de cliente</td>
+        <td>Consumidores que buscan rapidez, conveniencia y precio accesible</td>
+      </tr>
+      <tr>
+        <td>Competencia</td>
+        <td>Cafeterías, comida rápida, tiendas de conveniencia y panaderías</td>
+      </tr>
+      <tr>
+        <td>Ventaja competitiva</td>
+        <td>Marca reconocida, estandarización, rapidez y sistema de franquicias</td>
+      </tr>
+    </table>
+
+    <h3>3.3 Modelo de negocio</h3>
+    <p>El modelo de negocio de Dunkin’ se basa principalmente en franquicias. Esto significa que la empresa permite que inversionistas externos operen locales bajo su marca, siguiendo estándares definidos por la compañía.</p>
+    <p>Este sistema permite a Dunkin’ crecer rápidamente sin asumir directamente todos los costos de inversión, administración y operación de cada local. A cambio, el franquiciado obtiene el derecho a usar una marca reconocida, acceder a procesos estandarizados y aprovechar una propuesta comercial ya probada.</p>
+
+    <div class="highlight">
+      <strong>Interpretación estratégica:</strong> Dunkin’ usa contratos de franquicia para controlar la calidad sin tener que ser dueño directo de todos los locales. Así reduce costos de coordinación interna y mantiene control sobre la marca.
+    </div>
+  </section>
+
+  <section id="integracion">
+    <h2>4. Integración Vertical y Gobernanza</h2>
+
+    <h3>4.1 Grado de integración vertical</h3>
+    <p>Dunkin’ presenta una integración vertical parcial. La empresa controla aspectos críticos como marca, imagen, estándares de producto, diseño del local, manuales operativos, campañas de marketing y requisitos de calidad. Sin embargo, no necesariamente opera directamente todos los locales ni produce internamente todos los insumos.</p>
+
+    <table>
+      <tr>
+        <th>Actividad</th>
+        <th>¿La controla Dunkin’?</th>
+        <th>Tipo de gobernanza</th>
+      </tr>
+      <tr>
+        <td>Marca e identidad visual</td>
+        <td>Sí</td>
+        <td>Control corporativo</td>
+      </tr>
+      <tr>
+        <td>Operación diaria del local</td>
+        <td>Parcialmente</td>
+        <td>Franquicia</td>
+      </tr>
+      <tr>
+        <td>Proveedores e insumos</td>
+        <td>Parcialmente</td>
+        <td>Contratos y estándares</td>
+      </tr>
+      <tr>
+        <td>Atención al cliente</td>
+        <td>Indirectamente</td>
+        <td>Manuales y supervisión</td>
+      </tr>
+      <tr>
+        <td>Expansión territorial</td>
+        <td>Sí, con franquiciados</td>
+        <td>Contratos de franquicia</td>
+      </tr>
+    </table>
+
+    <h3>4.2 Determinantes de gobernanza</h3>
+    <p>La gobernanza de Dunkin’ responde a la necesidad de equilibrar control y eficiencia. Si la empresa controlara todos los locales directamente, tendría más control, pero enfrentaría mayores costos administrativos y financieros. Si dejara todo al mercado, perdería calidad y consistencia.</p>
+    <p>Por eso, la franquicia funciona como una forma intermedia: el franquiciado asume parte de la inversión y operación, mientras Dunkin’ mantiene el control estratégico de la marca.</p>
+
+    <h3>4.3 Ventajas de la franquicia</h3>
+    <ul>
+      <li>Permite expansión rápida con menor inversión propia.</li>
+      <li>Reduce costos de coordinación interna.</li>
+      <li>Aprovecha conocimiento local de los franquiciados.</li>
+      <li>Permite mantener estándares comunes mediante contratos.</li>
+      <li>Disminuye el riesgo financiero directo para la empresa matriz.</li>
+    </ul>
+
+    <h3>4.4 Riesgos del modelo</h3>
+    <ul>
+      <li>Puede existir pérdida de control directo sobre la operación.</li>
+      <li>Un mal franquiciado puede afectar la reputación de la marca.</li>
+      <li>Hay riesgo de conflicto entre objetivos del franquiciado y la empresa matriz.</li>
+      <li>Se requiere supervisión constante para evitar desviaciones de calidad.</li>
+    </ul>
+  </section>
+
+  <section id="interactivo">
+    <h2>5. Visualización Interactiva del Punto Óptimo</h2>
+    <p>El siguiente recurso permite visualizar de manera simple cómo cambia la conveniencia entre mercado, franquicia e integración vertical. Mueve el control para simular el nivel de integración de Dunkin’.</p>
+
+    <div class="interactive">
+      <label for="integration"><strong>Nivel de integración vertical:</strong></label>
+      <input type="range" id="integration" min="0" max="100" value="50" oninput="updateIntegration()" />
+      <div class="bar-container">
+        <div class="bar" id="bar"></div>
+      </div>
+      <p class="result" id="result">Modelo híbrido: franquicia con control corporativo</p>
+      <p id="explanation">Este punto representa el equilibrio más cercano al caso Dunkin’: no controla todo internamente, pero tampoco deja toda la operación al mercado.</p>
+    </div>
+
+    <h3>Interpretación</h3>
+    <p>Cuando el nivel de integración es muy bajo, la empresa depende demasiado del mercado y puede perder control sobre calidad, experiencia de cliente y reputación. Cuando el nivel de integración es muy alto, la empresa asume demasiados costos internos, aumenta la burocracia y pierde flexibilidad.</p>
+    <p>El caso Dunkin’ se ubica en un punto medio: utiliza franquicias, contratos y estándares para mantener control sin absorber todos los costos operativos.</p>
+  </section>
+
+  <section>
+    <h2>6. Análisis Crítico</h2>
+    <p>Dunkin’ demuestra que el tamaño eficiente de una empresa no siempre implica poseer todos los activos o controlar directamente todos los procesos. Su tamaño real se explica por una red de contratos, franquicias, proveedores y estándares corporativos.</p>
+    <p>Esto refleja una lógica moderna de organización empresarial: crecer mediante coordinación contractual. La empresa matriz concentra sus esfuerzos en aquello que genera mayor valor estratégico, como la marca, el modelo de negocio, el marketing, la innovación de productos y la estandarización. En cambio, delega la operación local a franquiciados que pueden administrar mejor ciertos costos y adaptarse al mercado específico.</p>
+    <p>Desde la perspectiva del Capítulo 2, Dunkin’ existe porque reduce costos de transacción, pero no integra completamente porque los costos de coordinación serían demasiado altos. Su estructura es eficiente porque combina jerarquía, contratos y mercado.</p>
+  </section>
+
+  <section id="conclusion" class="conclusion">
+    <h2>7. Conclusión</h2>
+    <p>Dunkin’ Donuts es un ejemplo claro de cómo una empresa puede organizarse estratégicamente para equilibrar eficiencia, control y crecimiento. Su modelo de franquicias muestra que la empresa no necesita internalizar todas las actividades para ser grande y competitiva.</p>
+    <p>El análisis permite concluir que Dunkin’ alcanza un tamaño eficiente mediante una integración vertical parcial. Controla lo esencial para proteger su marca y propuesta de valor, pero externaliza la operación de muchos locales mediante contratos de franquicia.</p>
+    <p>Por lo tanto, Dunkin’ funciona como un sustituto del mercado en aquellas actividades donde el control es fundamental, pero utiliza el mercado y los contratos cuando estos mecanismos permiten reducir costos y acelerar la expansión. Su punto óptimo se encuentra en un modelo híbrido, donde la empresa matriz dirige estratégicamente y los franquiciados ejecutan operativamente.</p>
+  </section>
+
+  <footer>
+    <p>Proyecto: Naturaleza y Tamaño de la Empresa | Caso Dunkin’ Donuts</p>
+    <p>Organización Industrial para la Estrategia Empresarial</p>
+  </footer>
+
+  <script>
+    function updateIntegration() {
+      const value = document.getElementById('integration').value;
+      const result = document.getElementById('result');
+      const explanation = document.getElementById('explanation');
+      const bar = document.getElementById('bar');
+      bar.style.width = value + '%';
+
+      if (value < 35) {
+        result.textContent = 'Baja integración: alta dependencia del mercado';
+        explanation.textContent = 'La empresa externaliza demasiado. Puede reducir costos internos, pero aumenta el riesgo de pérdida de control, baja calidad e inconsistencia de marca.';
+      } else if (value <= 70) {
+        result.textContent = 'Modelo híbrido: franquicia con control corporativo';
+        explanation.textContent = 'Este punto representa el caso Dunkin’: combina contratos, franquicias y estándares para equilibrar control, flexibilidad y eficiencia.';
+      } else {
+        result.textContent = 'Alta integración: mayor control, pero más burocracia';
+        explanation.textContent = 'La empresa controla casi todo internamente. Puede asegurar calidad, pero enfrenta mayores costos de coordinación, administración e inversión.';
+      }
+    }
+  </script>
+</body>
+</html>
