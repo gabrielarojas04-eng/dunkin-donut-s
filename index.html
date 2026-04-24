@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naturaleza y Tamaño de la Empresa | Dunkin'</title>
@@ -279,6 +280,83 @@
     <h3>2.4 Tamaño óptimo de la empresa</h3>
     <p>El tamaño de una empresa no debe medirse solo por cantidad de locales o ventas. Desde esta teoría, el tamaño óptimo se alcanza cuando la empresa controla internamente solo aquello que le genera eficiencia y deja al mercado o a contratos aquello que otros pueden hacer mejor.</p>
     <p>Si una empresa crece demasiado, aumentan los costos de coordinación: burocracia, lentitud, supervisión, conflictos internos y pérdida de flexibilidad. Si externaliza demasiado, aumentan los costos de transacción: menor control, dependencia de terceros y riesgo de calidad.</p>
+    <input type="range" min="0" max="100" value="50" id="slider" oninput="updateChart()">
+
+<canvas id="grafico"></canvas>
+
+<p id="texto"></p>
+<script>
+
+const ctx = document.getElementById('grafico');
+
+let chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: Array.from({length: 101}, (_, i) => i),
+        datasets: [
+            {label:'Costos de Mercado', data:[], tension:0.4},
+            {label:'Costos Internos', data:[], tension:0.4},
+            {label:'Punto Óptimo', data:[], type:'scatter', pointRadius:6},
+            {label:'Equilibrio', data:[], borderDash:[5,5]}
+        ]
+    },
+    options:{
+        responsive:true,
+        scales:{
+            x:{title:{display:true,text:'Nivel de integración'}},
+            y:{title:{display:true,text:'Costo'}}
+        }
+    }
+});
+
+function generarDatos(v){
+    let m=[], e=[];
+    for(let i=0;i<=100;i++){
+        m.push(100 - i + (v/10));
+        e.push(i + (v/10));
+    }
+    return {m,e};
+}
+
+function interseccion(m,e){
+    for(let i=0;i<m.length;i++){
+        if(Math.abs(m[i]-e[i])<2){
+            return {x:i,y:m[i]};
+        }
+    }
+    return {x:50,y:50};
+}
+
+function updateChart(){
+
+    const val = document.getElementById('slider').value;
+    const txt = document.getElementById('texto');
+
+    let d = generarDatos(val);
+    let p = interseccion(d.m, d.e);
+
+    chart.data.datasets[0].data = d.m;
+    chart.data.datasets[1].data = d.e;
+    chart.data.datasets[2].data = [{x:p.x, y:p.y}];
+    chart.data.datasets[3].data = [{x:p.x,y:0},{x:p.x,y:100}];
+
+    chart.update();
+
+    if(val < 35){
+        txt.innerText = "Mayor uso del mercado (bajo control).";
+    }
+    else if(val <= 70){
+        txt.innerText = "Punto óptimo: equilibrio entre mercado e integración.";
+    }
+    else{
+        txt.innerText = "Alta integración interna (más control, mayor costo).";
+    }
+}
+
+updateChart();
+
+</script>
+
 
     <h3>2.5 Problema de agencia</h3>
     <p>El problema de agencia aparece cuando una persona o entidad, llamada agente, toma decisiones en nombre de otra, llamada principal. El conflicto surge porque ambos pueden tener objetivos distintos.</p>
